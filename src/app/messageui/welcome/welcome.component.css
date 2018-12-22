@@ -1,0 +1,12 @@
+.background{
+    height:100vh;
+    background: url(../../../assets/back.jpg) no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.center{
+    position: relative;
+    top:50%;
+    left:30%;
+}

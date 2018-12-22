@@ -1,0 +1,22 @@
+<div class="row back">
+  <div class="col-12">
+    <div class="input-group p-2 mx-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fas fa-search"></i></button>
+      </div>
+      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+        aria-describedby="button-addon1">
+    </div>
+  </div>
+</div>
+
+<div class="bg-light scroll no-gutters">
+  <div class="row p-2" *ngFor="let f of addedFriends; index as i" [ngClass]="{'activelink':currentSelectedFriend==i}">
+    <div class="col-3">
+      <img src="/assets/head.png" class="img-circle" width="45px" height="45px">
+    </div>
+    <div class="col-9">
+      <h6 class="mt-2 overflow" (click)="itemClicked(f,i)">{{f.friendid}}</h6>
+    </div>
+  </div>
+</div>

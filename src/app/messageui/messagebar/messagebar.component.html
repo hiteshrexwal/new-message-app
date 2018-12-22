@@ -1,0 +1,26 @@
+<app-message-navbar></app-message-navbar>
+<section class="scroll bg-light">
+  <div *ngFor="let m of messagelist[friend.username]">
+    <div class="text-right p-3 m-1" *ngIf="m.send==1">
+      <div class=" d-inline setsize p-2">{{m.msg}}</div>
+    </div>
+    <div class="text-left p-3 m-1" *ngIf="m.send==0">
+        <div class=" d-inline setsize p-2">{{m.msg}}</div>
+      </div>
+  </div>
+
+</section>
+<footer class="footer">
+  <div class="container">
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-7 col-md-8 col-lg-9 ml-4">
+          <input type="text" class="form-control message" formControlName="msg">
+        </div>
+        <div class="col mt-0">
+          <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</footer>

@@ -1,0 +1,6 @@
+.new-border{
+    border-left: 1px solid black;
+}
+messagebar{
+    overflow-y: auto;
+}

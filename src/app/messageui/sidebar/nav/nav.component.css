@@ -1,0 +1,20 @@
+.img-circle {
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.bg-grey{
+    background-color: #4DB6AC;
+}
+
+.change-color{
+    color: black;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+a{
+    cursor: pointer;
+}

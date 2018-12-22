@@ -1,0 +1,67 @@
+<div id="main">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="title">SIGN IN</div>
+    <div class="form-group">
+      <input type="email" placeholder="EMAIL ID" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && l.email.errors }" />
+      <div *ngIf="signupsubmitted && l.email.errors" class="invalid-feedback">
+        <div *ngIf="l.email.errors.required">Email is required</div>
+        <div *ngIf="l.email.errors.email">Email is not valid</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="PASSWORD" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && l.password.errors }" />
+      <div *ngIf="signupsubmitted && l.password.errors" class="invalid-feedback">
+        <div *ngIf="l.password.errors.required">Password is required</div>
+        <div *ngIf="l.password.errors.minlength">Minimum Length of Password is 8</div>
+        <div *ngIf="l.password.errors.maxlength">Maximum Length of Password is 20</div>
+      </div>
+    </div>
+    <div align="right">
+      <div id="frt">FORGOT PASSWORD</div>
+    </div>
+    <div align="center">
+      <input type="submit" value="SIGN IN" id="signInBtn" />
+    </div>
+    <div align="center">
+      <div id="signUpMsg">DON'T HAVE AN ACCOUNT <a id="flipToSignUp">SIGN UP</a></div>
+    </div>
+  </form>
+</div>
+<div id="signUpForm">
+  <form [formGroup]="signupForm" (ngSubmit)="onSignUpFormSubmit()">
+    <div class="title">SIGN UP</div>
+    <div class="form-group">
+      <input type="text" formControlName="firstname" placeholder="FIRST NAME" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && f.firstname.errors }" />
+      <div *ngIf="signupsubmitted && f.firstname.errors" class="invalid-feedback">
+        <div *ngIf="f.firstname.errors.required">First Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" placeholder="LAST NAME" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && f.lastname.errors }" />
+      <div *ngIf="signupsubmitted && f.lastname.errors" class="invalid-feedback">
+        <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="email" placeholder="EMAIL ID" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && f.email.errors }" />
+      <div *ngIf="signupsubmitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.email">Email is not valid</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="PASSWORD" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': signupsubmitted && f.password.errors }" />
+      <div *ngIf="signupsubmitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+        <div *ngIf="f.password.errors.minlength">Minimum Length of Password is 8</div>
+        <div *ngIf="f.password.errors.maxlength">Maximum Length of Password is 20</div>
+      </div>
+    </div>
+    <div align="center">
+      <input type="submit" value="SIGN UP" id="signUpBtn" style="margin-top:5px;" />
+    </div>
+    <div align="center">
+      <div id="signInMsg">HAVE AN ACCOUNT <a id="flipToSignIn">SIGN IN</a></div>
+    </div>
+  </form>
+</div>

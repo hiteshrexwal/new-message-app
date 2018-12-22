@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Hanalei+Fill');
+
+.text-box{
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.gear-size{
+    width: 100px;
+}
+.second-gear{
+    transform: translate(50%,-15%);
+    
+}
+
+.third-gear{
+    transform: translate(-50%,-115%);
+}
+
+h1{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,0%);
+    font-family: 'Hanalei Fill';
+    color: white;
+}
+
+

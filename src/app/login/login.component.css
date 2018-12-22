@@ -1,0 +1,119 @@
+#main,#signUpForm{
+    height: 400px;
+    width: 400px;
+    background-color: black;
+    box-shadow: 0 0 0 30px rgba(255,255,255,.2);
+    border-radius: 50%;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(0deg);
+}
+form{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+}
+.title{
+    font-family: calibri;
+    font-size: 30px;
+    color:white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+hr{
+    margin: 5px auto;
+    padding: 0px;
+}
+input[type=text],input[type=password],input[type=email]{
+    height: 35px;
+    width: 250px;
+    font-family: sans-serif;
+    font-size: 11px;
+    border-radius: 35px;
+    background: none;
+    border: none;
+    outline: none;
+    border: 1px solid #3498db;
+    margin-top: 3px;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    transition: 0.25s;
+}
+input[type=text]:focus,input[type=password]:focus,input[type=email]:focus{
+    border-color:#2ecc71;
+}
+#frt{
+    font-family: calibri;
+    color:lightgray;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+#signInBtn,#signUpBtn{
+    height: 35px;
+    width: 150px;
+    font-family: calibri;
+    font-size: 14px;
+    color:white;
+    line-height: 0px;
+    outline: none;
+    background:none;
+    border-radius: 35px;
+    text-align: center;
+    border:2px solid #2ecc71;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-bottom: 3px;
+}
+#signInBtn:hover,#signUpBtn:hover{
+    background-color: #2ecc71;
+}
+#signUpMsg,#signInMsg{
+    font-family: calibri;
+    font-size: 12px;
+    color:#777;
+}
+a{
+    color:white!important;
+    cursor: pointer;
+}
+#main{
+    -webkit-backface-visibility:hidden;
+    -webkit-animation-duration:2s;
+}
+#signUpForm{
+    -webkit-backface-visibility:hidden;
+    -webkit-transform:translate(-50%,-50%) rotateY(180deg);
+    -webkit-animation-duration:2s;
+}
+
+@-webkit-keyframes showSignUp{
+    0%{transform: translate(-50%,-50%) rotateY(0deg);}
+    100%{transform: translate(-50%,-50%) rotateY(180deg);}
+}
+@-webkit-keyframes hideSignIn{
+    0%{transform: translate(-50%,-50%) rotateY(180deg);}
+    100%{transform: translate(-50%,-50%) rotateY(0deg);}
+}
+@-webkit-keyframes showSignIn{
+    0%{transform: translate(-50%,-50%) rotateY(0deg);}
+    100%{transform: translate(-50%,-50%) rotateY(180deg);}
+}
+@-webkit-keyframes hideSignUp{
+    0%{transform: translate(-50%,-50%) rotateY(180deg);}
+    100%{transform: translate(-50%,-50%) rotateY(0deg);}
+}
+
+.invalid-feedback{
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.form-group{
+    margin-bottom: 0;
+}
+
