@@ -54,15 +54,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.loginsubmitted = true;
-    console.log(this.loginForm);
     // stop here if form is invalid
     if (this.loginForm.invalid) {
         return;
     }
-    console.log(this.loginForm.value)
     this.service.getUser(this.loginForm.value.email,this.loginForm.value.password)
     .subscribe((data)=>{
-      console.log(data.json());
       if(!data.json()){
         alert('Username or email incorrect');
       }
@@ -70,30 +67,18 @@ export class LoginComponent implements OnInit {
        
         this.router.navigate(['/messages']);
       }
-      /*this.service.checkUser().subscribe((data)=>{
-        console.log(data.json());
-        if(data.json()){
-          this.router.navigate(['/messages']);
-        }
-        else{
-          this.router.navigate(['/login']);
-        }
-      });*/
     })
     
   }
   onSignUpFormSubmit() {
     this.signupsubmitted = true;
-    console.log(this.signupForm);
     // stop here if form is invalid
     if (this.signupForm.invalid) {
         return;
     }
-    console.log(this.signupForm.value)
     this.service.createUser(this.signupForm.value.email,this.signupForm.value.password
       ,this.signupForm.value.firstname,this.signupForm.value.lastname)
       .subscribe((data)=>{
-        console.log(data.json());
         if(data.json()){
           $("#flipToSignIn").click();
         }

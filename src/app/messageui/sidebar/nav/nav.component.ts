@@ -26,7 +26,7 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.service.getUserDetails().subscribe((data)=>{
       this.user=`${data.json().firstname} ${data.json().lastname}`;
-      console.log(data.json().username);
+      //console.log(data.json().username);
       this.messageService.changeuser(data.json().username);
      
     });
@@ -64,7 +64,7 @@ export class NavComponent implements OnInit {
     }
     console.log(this.searchUserForm.value);
     this.service.findfriends(this.searchUserForm.value.email).subscribe((data)=>{
-      console.log(data.json());
+      //console.log(data.json());
       if(data.json().message){
         this.friend=data.json().message;
         this.nouser=true;
@@ -78,7 +78,7 @@ export class NavComponent implements OnInit {
 
   addNewFriend(){
     this.service.addfriend(this.searchUserForm.value.email).subscribe((data)=>{
-      console.log(data.json());
+      //console.log(data.json());
       if(data.json()){
         alert("Friend Added Sucessfully");
       }
@@ -90,14 +90,14 @@ export class NavComponent implements OnInit {
 
   getFriendRequest(){
     this.service.getnewRequest().subscribe((data)=>{
-      console.log(data.json());
+      //console.log(data.json());
       this.newRequest=data.json();
    })
   }
 
   getAddedFriends(){
     this.service.getAddedFriends().subscribe((data)=>{
-      console.log(data.json());
+      //console.log(data.json());
       this.addedFriends=data.json();
    })
   }

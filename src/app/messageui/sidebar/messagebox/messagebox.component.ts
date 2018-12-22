@@ -22,7 +22,7 @@ export class MessageboxComponent implements OnInit {
 
   getAddedFriends(){
     this.service.getAddedFriends().subscribe((data)=>{
-      console.log(data.json());
+      //console.log(data.json());
       this.addedFriends=data.json();
    })
   }

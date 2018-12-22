@@ -13,7 +13,7 @@ export class LoadingComponent implements OnInit {
 
   ngOnInit() {
     this.service.checkUser().subscribe((data)=>{
-      console.log(data.json());
+      //console.log(data.json());
       if(data.json()){
         this.router.navigate(['/messages']);
       }

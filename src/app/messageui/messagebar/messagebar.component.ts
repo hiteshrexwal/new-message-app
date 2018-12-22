@@ -32,7 +32,6 @@ export class MessagebarComponent implements OnInit {
     this.socket.getMessage().subscribe((data)=>{
       
       let x=JSON.parse(JSON.stringify(data));
-      console.log(x);
       if(this.messagelist[x.sender]){
         this.messagelist[x.sender].push({msg:x.message,send:0});
       }
@@ -59,7 +58,7 @@ export class MessagebarComponent implements OnInit {
     if (this.messageForm.invalid) {
       return;
     }
-    console.log(this.user);
+    //console.log(this.user);
     this.messagelist[this.friend.username].push({msg:this.messageForm.value.msg,send:1});
     this.socket.sendMessage('send_msg',{message:this.messageForm.value.msg,
                                         friendId:this.friend.username,
