@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
-const db = new Sequelize('messagingdb', 'messaging-user', 'mypass', {
-  host: 'localhost',
+const db = new Sequelize("mysql://b5fa7042b77bc2:dae5668f@us-cdbr-iron-east-01.cleardb.net/heroku_cf88678b1b1f1b1?reconnect=true", {
   dialect: 'mysql',
   operatorsAliases: false,
 

@@ -81,8 +81,8 @@ function findId(userid){
   return false;
 }
 
-
-app.listen(2400,()=>{
+const port=process.env.PORT||2400
+app.listen(port,()=>{
     console.log("Server started at port 2400");
 })
 
