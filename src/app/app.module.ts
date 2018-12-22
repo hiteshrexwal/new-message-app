@@ -20,7 +20,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { WelcomeComponent } from './messageui/welcome/welcome.component';
 
  
-const config: SocketIoConfig = { url: 'http://localhost:2400', options: {} };
+const config: SocketIoConfig = { url: 'https://new-message-app.herokuapp.com', options: {} };
 
 @NgModule({
   declarations: [
