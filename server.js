@@ -23,6 +23,7 @@ io.on('connection', function(socket){
     console.log(socket.id)
     if(pending_message[data]){
       io.to(`${socket.id}`).emit('pending_msg',pending_message[data]);
+      delete pending_message[data];
     }
   });
   socket.on('send_msg',(data)=>{
